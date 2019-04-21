@@ -5,7 +5,7 @@
     <title>Leonidas Esteban</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Sans+Pro" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="css/media.css"  media="screen and (max-width: 768px"/> -->
+    <!-- <link rel="stylesheet" href="css/media.css" media="screen and (max-width:768px)"/> -->
     <link rel="stylesheet" href="css/estilos.css">
     <!-- <style>
       @media screen and (max-width: 768px) {
@@ -14,10 +14,10 @@
         }
       }
     </style> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
   </head>
   <body>
-    <i class="icon-menu burger-button"></i>
+    <i class="icon-menu burger-button" id="burger-menu"></i>
     <header class="header">
       <div class="container">
         <figure class="logo">
@@ -83,6 +83,7 @@
     <div class="container">
       <h2 class="event-list-title">Más sobre mi experiencia</h2>
     </div>
+   
     <section id="eventos" class="event-list">
       <div class="container">
         <article class="event">
@@ -110,7 +111,7 @@
         </article>
         <article class="event">
           <figure class="event-imageContainer">
-              <video class="html-video" src="videos/f8.mp4" width="1280" height="720" controls></video>
+            <video class="html-video" src="videos/f8.mp4" width="1280" height="720" controls></video>
             <!-- <img class="event-image" src="images/platzi-conf.jpg" width="500" /> -->
           </figure>
           <div class="event-detail">
@@ -153,10 +154,29 @@
         </div>
         <div>
           <p>
-            Designed with by <a href="https://twitter.com/thespianartist">@thespianartist</a>
+            Designed with ❤️ by <a href="https://twitter.com/thespianartist">@thespianartist</a>
           </p>
         </div>
       </div>
     </footer>
+    <script>
+
+    const menu = document.querySelector('.menu')
+    const burguerButton = document.querySelector('#burger-menu')
+        
+
+    burguerButton.addEventListener('click', hideShow)
+    
+    function hideShow(){
+
+      if(menu.classList.contains('is-active')){
+        menu.classList.remove('is-active')
+      }else{
+        menu.classList.add('is-active')
+      }
+
+    }
+
+    </script>
   </body>
 </html>
