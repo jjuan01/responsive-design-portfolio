@@ -160,14 +160,25 @@
       </div>
     </footer>
     <script>
-      // window.matchMedia('screen and (max-width: 767px)')
-
+      // Media querie
+      const ipad = window.matchMedia('screen and (max-width: 767px)')
       const menu = document.querySelector('.menu')
       const burguerButton = document.querySelector('#burger-menu')  
 
-      burguerButton.addEventListener('click', hideShow)
       
-      function hideShow(){
+      ipad.addListener(validation)
+      
+      function validation(event) {
+        if(event.matches) {
+          burguerButton.addEventListener('click', hideShow)
+        } else {
+          burguerButton.addEventListener('click', hideShow)
+        }
+      }
+
+      validation(ipad)
+      
+      function hideShow() {
 
         if(menu.classList.contains('is-active')){
           menu.classList.remove('is-active')
